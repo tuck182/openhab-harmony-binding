@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: openHAB HarmonyHub IO Bundle
+Bundle-SymbolicName: org.openhab.io.harmonyhub;singleton:=true
+Bundle-Version: 1.5.1
+Bundle-Vendor: openHAB.org
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: org.openhab.io.harmonyhub
+Import-Package: net.whistlingfish.harmony;version="1.0.0", 
+ org.apache.commons.lang;version="2.6.0",
+ org.openhab.core.events,
+ org.osgi.service.cm;version="1.4.0",
+ org.slf4j;version="1.6.4"
+Bundle-DocURL: http://www.openhab.org
+Service-Component: OSGI-INF/harmonyhub.xml
+Bundle-ClassPath: .
