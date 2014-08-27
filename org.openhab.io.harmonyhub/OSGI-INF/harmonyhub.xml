@@ -9,15 +9,15 @@
     http://www.eclipse.org/legal/epl-v10.html
 
 -->
-<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" 
- activate="activate" deactivate="deactivate" enabled="true" immediate="true" 
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0"
+ activate="activate" deactivate="deactivate" enabled="true" immediate="true"
  name="Harmony Hub Connection Service">
     <implementation class="org.openhab.io.harmonyhub.HarmonyHubGateway" />
-  
-    <service>   		
+
+    <service>
         <provide interface="org.openhab.io.harmonyhub.HarmonyHubGateway" />
         <provide interface="org.osgi.service.cm.ManagedService" />
     </service>
-   
-    <property name="service.pid" type="String" value="org.openhab.harmonyhub" /> 
+
+    <property name="service.pid" type="String" value="org.openhab.harmonyhub" />
 </scr:component>

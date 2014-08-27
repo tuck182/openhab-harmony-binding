@@ -22,32 +22,32 @@ import org.slf4j.LoggerFactory;
  */
 public final class HarmonyHubActivator implements BundleActivator {
 
-	private static Logger logger = LoggerFactory.getLogger(HarmonyHubActivator.class); 
-	
-	private static BundleContext context;
-	
-	/**
-	 * Called whenever the OSGi framework starts our bundle
-	 */
-	public void start(BundleContext bc) throws Exception {
-		context = bc;
-		logger.debug("HarmonyHub action has been started.");
-	}
+    private static Logger logger = LoggerFactory.getLogger(HarmonyHubActivator.class);
 
-	/**
-	 * Called whenever the OSGi framework stops our bundle
-	 */
-	public void stop(BundleContext bc) throws Exception {
-		context = null;
-		logger.debug("HarmonyHub action has been stopped.");
-	}
-	
-	/**
-	 * Returns the bundle context of this bundle
-	 * @return the bundle context
-	 */
-	public static BundleContext getContext() {
-		return context;
-	}
-	
+    private static BundleContext context;
+
+    /**
+     * Called whenever the OSGi framework starts our bundle
+     */
+    public void start(BundleContext bc) throws Exception {
+        context = bc;
+        logger.debug("HarmonyHub action has been started.");
+    }
+
+    /**
+     * Called whenever the OSGi framework stops our bundle
+     */
+    public void stop(BundleContext bc) throws Exception {
+        context = null;
+        logger.debug("HarmonyHub action has been stopped.");
+    }
+
+    /**
+     * Returns the bundle context of this bundle
+     * @return the bundle context
+     */
+    public static BundleContext getContext() {
+        return context;
+    }
+
 }

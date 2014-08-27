@@ -20,49 +20,46 @@ import org.slf4j.LoggerFactory;
  * @since 1.5.1
  */
 public class HarmonyHubActionService implements ActionService {
-	private static final Logger logger = LoggerFactory
-			.getLogger(HarmonyHubActionService.class);
+    @SuppressWarnings("unused")
+    private static final Logger logger = LoggerFactory
+    .getLogger(HarmonyHubActionService.class);
 
-	private static HarmonyHubGateway harmonyHubGateway;
+    private static HarmonyHubGateway harmonyHubGateway;
 
-	public HarmonyHubActionService() {
-	}
+    public HarmonyHubActionService() {
+    }
 
-	public void activate() {
-	}
+    public void activate() {
+    }
 
-	public void deactivate() {
-		// deallocate Resources here that are no longer needed and
-		// should be reset when activating this binding again
-	}
+    public void deactivate() {
+    }
 
-	public String getActionClassName() {
-		return HarmonyHub.class.getCanonicalName();
-	}
+    public String getActionClassName() {
+        return HarmonyHub.class.getCanonicalName();
+    }
 
-	public Class<?> getActionClass() {
-		return HarmonyHub.class;
-	}
+    public Class<?> getActionClass() {
+        return HarmonyHub.class;
+    }
 
-	public static boolean isProperlyConfigured() {
-		return harmonyHubGateway.isProperlyConfigured();
-	}
+    public static boolean isProperlyConfigured() {
+        return harmonyHubGateway.isProperlyConfigured();
+    }
 
-	public synchronized void setHarmonyHubGateway(
-			HarmonyHubGateway harmonyHubGateway) {
-		logger.debug("harmony client set");
-		HarmonyHubActionService.harmonyHubGateway = harmonyHubGateway;
-	}
+    public synchronized void addHarmonyHubGateway(
+            HarmonyHubGateway harmonyHubGateway) {
+        HarmonyHubActionService.harmonyHubGateway = harmonyHubGateway;
+    }
 
-	public synchronized void removeHarmonyHubGateway(
-			HarmonyHubGateway harmonyHubGateway) {
-		logger.debug("harmony client removed");
-		if (HarmonyHubActionService.harmonyHubGateway == harmonyHubGateway) {
-			harmonyHubGateway = null;
-		}
-	}
+    public synchronized void removeHarmonyHubGateway(
+            HarmonyHubGateway harmonyHubGateway) {
+        if (HarmonyHubActionService.harmonyHubGateway == harmonyHubGateway) {
+            HarmonyHubActionService.harmonyHubGateway = null;
+        }
+    }
 
-	public static HarmonyHubGateway gateway() {
-		return harmonyHubGateway;
-	}
+    public static HarmonyHubGateway gateway() {
+        return harmonyHubGateway;
+    }
 }

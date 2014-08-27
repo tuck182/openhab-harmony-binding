@@ -21,41 +21,41 @@ import org.slf4j.LoggerFactory;
  * @since 1.5.1
  */
 public class HarmonyHub {
-	private static final Logger logger = LoggerFactory.getLogger(HarmonyHub.class);
+    private static final Logger logger = LoggerFactory.getLogger(HarmonyHub.class);
 
-	@ActionDoc(text="Send a button press event to the Harmony Hub", 
-			returns="<code>true</code>, if successful and <code>false</code> otherwise.")
-	public static boolean harmonyPressButton(@ParamDoc(name="deviceId") String deviceId, @ParamDoc(name="action") String action) {
-		if (!HarmonyHubActionService.isProperlyConfigured()) {
-			logger.debug("HarmonyHub action is not yet configured - execution aborted!");
-			return false;
-		}
-		HarmonyHubActionService.gateway().pressButton(deviceId, action);
-		
-		return true;
-	}
+    @ActionDoc(text="Send a button press event to the Harmony Hub",
+            returns="<code>true</code>, if successful and <code>false</code> otherwise.")
+    public static boolean harmonyPressButton(@ParamDoc(name="deviceId") String deviceId, @ParamDoc(name="action") String action) {
+        if (!HarmonyHubActionService.isProperlyConfigured()) {
+            logger.debug("HarmonyHub action is not yet configured - execution aborted!");
+            return false;
+        }
+        HarmonyHubActionService.gateway().pressButton(deviceId, action);
 
-	@ActionDoc(text="Notify the Harmony Hub to start an activity", 
-			returns="<code>true</code>, if successful and <code>false</code> otherwise.")
-	public static boolean harmonyStartActivity(@ParamDoc(name="activityName") int activityId) {
-		if (!HarmonyHubActionService.isProperlyConfigured()) {
-			logger.debug("HarmonyHub action is not yet configured - execution aborted!");
-			return false;
-		}
-		HarmonyHubActionService.gateway().startActivity(activityId);
-		
-		return true;
-	}
+        return true;
+    }
 
-	@ActionDoc(text="Notify the Harmony Hub to start an activity", 
-			returns="<code>true</code>, if successful and <code>false</code> otherwise.")
-	public static boolean harmonyStartActivity(@ParamDoc(name="activityName") String label) {
-		if (!HarmonyHubActionService.isProperlyConfigured()) {
-			logger.debug("HarmonyHub action is not yet configured - execution aborted!");
-			return false;
-		}
-		HarmonyHubActionService.gateway().startActivityByName(label);
-		
-		return true;
-	}
+    @ActionDoc(text="Notify the Harmony Hub to start an activity",
+            returns="<code>true</code>, if successful and <code>false</code> otherwise.")
+    public static boolean harmonyStartActivity(@ParamDoc(name="activityName") int activityId) {
+        if (!HarmonyHubActionService.isProperlyConfigured()) {
+            logger.debug("HarmonyHub action is not yet configured - execution aborted!");
+            return false;
+        }
+        HarmonyHubActionService.gateway().startActivity(activityId);
+
+        return true;
+    }
+
+    @ActionDoc(text="Notify the Harmony Hub to start an activity",
+            returns="<code>true</code>, if successful and <code>false</code> otherwise.")
+    public static boolean harmonyStartActivity(@ParamDoc(name="activityName") String label) {
+        if (!HarmonyHubActionService.isProperlyConfigured()) {
+            logger.debug("HarmonyHub action is not yet configured - execution aborted!");
+            return false;
+        }
+        HarmonyHubActionService.gateway().startActivity(label);
+
+        return true;
+    }
 }
