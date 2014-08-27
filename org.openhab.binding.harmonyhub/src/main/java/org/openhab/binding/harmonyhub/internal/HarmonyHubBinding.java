@@ -35,7 +35,7 @@ public class HarmonyHubBinding extends AbstractBinding<HarmonyHubBindingProvider
     private static final Logger logger = LoggerFactory.getLogger(HarmonyHubBinding.class);
 
     private HarmonyHubGateway harmonyHubGateway;
-    private Map<HarmonyHubGateway, Set<HarmonyHubListener>> listeners = new HashMap<>();
+    private Map<HarmonyHubGateway, Set<HarmonyHubListener>> listeners = new HashMap<HarmonyHubGateway, Set<HarmonyHubListener>>();
 
     public void activate() {
         logger.debug("HarmonyHubBinding activated");

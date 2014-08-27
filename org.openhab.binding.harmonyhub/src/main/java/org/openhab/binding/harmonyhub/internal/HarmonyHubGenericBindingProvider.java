@@ -34,12 +34,13 @@ import static java.lang.String.format;
  */
 public class HarmonyHubGenericBindingProvider extends AbstractGenericBindingProvider implements
 HarmonyHubBindingProvider {
+    @SuppressWarnings("unused")
     private static final Logger logger = LoggerFactory.getLogger(HarmonyHubBinding.class);
 
     private static final Pattern INCOMING_CONFIG_PATTERN = Pattern.compile("<\\[(currentActivity)\\]");
     private static final Pattern OUTGOING_CONFIG_PATTERN = Pattern.compile(">\\[(press|start):(.*?)(?::(.*?))?\\]");
 
-    private Map<String, ConfigCreator> configCreators = new HashMap<>();
+    private Map<String, ConfigCreator> configCreators = new HashMap<String, ConfigCreator>();
     {
         configCreators.put("currentActivity", new ConfigCreator() {
             public BindingConfig create(Matcher matcher) {

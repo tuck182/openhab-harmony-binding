@@ -9,7 +9,6 @@ package org.openhab.io.harmonyhub;
 
 import java.util.Dictionary;
 
-import net.whistlingfish.harmony.ActivityChangeListener;
 import net.whistlingfish.harmony.HarmonyClient;
 import net.whistlingfish.harmony.HarmonyHubListener;
 
