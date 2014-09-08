@@ -1,0 +1,69 @@
+<configuration scan="true">
+
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} %-5level %logger{30}[:%line] - %msg%n%ex{10}</pattern>
+		</encoder>
+	</appender>
+
+	<appender name="FILE" class="ch.qos.logback.core.FileAppender">
+		<file>${openhab.logdir:-logs}/openhab.log</file>
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} %-5level %logger{30}[:%line]- %msg%n%ex</pattern>
+		</encoder>
+	</appender>
+
+	<appender name="EVENTFILE"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${openhab.logdir:-logs}/events.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<!-- weekly rollover and archiving -->
+			<fileNamePattern>events-%d{yyyy-ww}.log.zip</fileNamePattern>
+
+			<!-- keep 30 days' worth of history -->
+			<maxHistory>30</maxHistory>
+		</rollingPolicy>
+		<encoder>
+			<pattern>%d{yyyy-MM-dd HH:mm:ss} - %msg%n</pattern>
+		</encoder>
+	</appender>
+
+	<logger name="runtime.busevents" level="WARN" additivity="false">
+		<appender-ref ref="EVENTFILE" />
+		<appender-ref ref="STDOUT" />
+	</logger>
+
+    <logger name="org.openhab.action.harmonyhub" level="DEBUG" />
+    <logger name="org.openhab.binding.harmonyhub" level="DEBUG" />
+    <logger name="org.openhab.io.harmonyhub" level="DEBUG" />
+    <logger name="org.atmosphere.cpr.AtmosphereFramework" level="OFF" />
+	
+	<logger name="org.openhab" level="WARN" />
+	<logger name="org.openhab.binding.knx" level="WARN" />
+	<logger name="org.openhab.binding.onewire" level="WARN" />
+	<logger name="org.openhab.ui" level="WARN" />
+	<logger name="org.openhab.ui.webapp" level="WARN" />
+	<logger name="org.openhab.ui.webapp.internal.servlet" level="WARN" />
+	<logger name="org.openhab.io.net" level="WARN" />
+	<logger name="org.openhab.core.autoupdate" level="WARN" />
+	<logger name="org.openhab.core.persistence.internal" level="WARN" />
+	<logger name="org.openhab.core.transform.internal.service.MapTransformationService" level="WARN" />
+	<logger name="org.openhab.binding.vdr" level="WARN" />
+	<logger name="org.openhab.model.core.internal.folder" level="WARN" />
+	<logger name="org.openhab.io.dropbox" level="WARN" />
+  
+	<logger name="OSGi" level="WARN" />
+	<logger name="org.eclipse.jetty" level="WARN" />
+	<logger name="org.drools.SystemEventListener" level="WARN" />
+
+	<root level="WARN">
+		<appender-ref ref="FILE" />
+		<appender-ref ref="STDOUT" />
+	</root>
+
+	<logger name="org.openhab.io.dropbox" level="WARN" />
+	
+	<!-- temporary workaround for https://bugs.eclipse.org/bugs/show_bug.cgi?id=402750 -->
+	<logger name="OSGi" level="OFF" />
+	
+</configuration>

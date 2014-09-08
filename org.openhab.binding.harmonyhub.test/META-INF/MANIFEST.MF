@@ -1,0 +1,20 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: openHAB HarmonyHub Binding Tests
+Bundle-SymbolicName: org.openhab.binding.harmonyhub.test
+Bundle-Version: 1.5.1
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-Vendor: whistlingfish.net
+Import-Package: ch.qos.logback.classic,
+ ch.qos.logback.classic.encoder,
+ ch.qos.logback.classic.spi,
+ ch.qos.logback.core,
+ ch.qos.logback.core.encoder,
+ ch.qos.logback.core.pattern,
+ ch.qos.logback.core.spi,
+ org.slf4j
+Fragment-Host: org.openhab.binding.harmonyhub;bundle-version="1.2.0"
+Require-Bundle: org.junit4;bundle-version="4.8.1"
+Bundle-ClassPath: lib/mockito-all-1.9.5.jar,
+ ch.qos.logback.slf4j_1.0.7.v20121108-1250.jar,
+ .
