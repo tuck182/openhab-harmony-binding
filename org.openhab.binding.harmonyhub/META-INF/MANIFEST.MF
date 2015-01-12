@@ -10,7 +10,9 @@ Bundle-Activator: org.openhab.binding.harmonyhub.internal.HarmonyHubActivator
 Bundle-ManifestVersion: 2
 Bundle-Description: This is the HarmonyHub binding of the open Home Aut
  omation Bus (openHAB)
-Import-Package: net.whistlingfish.harmony;version="1.0.3",
+Import-Package: net.whistlingfish.openhab.binding,
+ net.whistlingfish.openhab.config,
+ net.whistlingfish.harmony;version="1.0.3",
  net.whistlingfish.harmony.config;version="1.0.3",
  org.apache.commons.lang,
  org.openhab.core.binding,

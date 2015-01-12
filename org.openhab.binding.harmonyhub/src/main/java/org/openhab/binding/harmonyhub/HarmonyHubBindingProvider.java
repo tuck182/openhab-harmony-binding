@@ -16,6 +16,5 @@ import org.openhab.core.binding.BindingProvider;
  * @since 1.5.1
  */
 public interface HarmonyHubBindingProvider extends BindingProvider {
-    boolean isInBound(String itemName);
     void bind(HarmonyHubBinding harmonyHubBinding, String itemName);
 }
