@@ -9,7 +9,7 @@
     <version>1.5.1</version>
   </parent>
 
-  <name>openHAB Squeeze Server</name>
+  <name>openHAB Harmony Client IO</name>
 
   <properties>
     <bundle.symbolicName>org.openhab.io.harmonyhub</bundle.symbolicName>
